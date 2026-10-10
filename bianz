@@ -1,0 +1,382 @@
+--luraph v14.9 deobfuscated by Vincitore
+local function iter(f, s, c)
+  local w = coroutine.wrap(function(...)
+    coroutine.yield()
+    for k, v in ... do coroutine.yield(true, k, v) end
+  end)
+
+  w(f, s, c)
+  return w
+end
+
+local function numfor(start, limit, step)
+  local q, y = step + 0, limit + 0
+  local t = start - q
+
+  return function()
+    t += q
+    if (q <= 0 and t >= y) or (q > 0 and t <= y) then return true, t end
+    return false
+  end
+end
+
+local L8 = bit32.rshift
+local L15 = bit32.bxor
+local L30 = bit32.band
+local L32 = table.move
+local L53 = {[19] = bit32.countlz, [20] = bit32.countrz, [21] = bit32.band, [22] = bit32.bor, [23] = bit32.lrotate, [24] = bit32.bnot, [25] = bit32.lshift, [26] = bit32.bxor, [27] = bit32.rrotate, [28] = bit32.rshift, [29] = string.unpack, [17] = {[1] = function() return 219 end, [2] = function() return 175 end, [3] = function() return 101 end, [4] = function() return 0 end, [5] = function() return 118 end, [6] = function() return 207 end, [7] = function() return 91 end, [8] = function() return 136 end}}
+local st923 = {}
+local v, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, clamp, floor, random, humanoidRigType, max, new, v43, material, new2, zero, clear, clock, spawn, wait, abs, humanoidStateType, lower, match, insert, date, remove, concat, find, format, min, lookAt, defer, qualityLevel, v69, clone, v692, find2, upper, v112, raycastFilterType, sort, delay, v71, n, fromOffset, fromScale, scaleType, new3, font, textXAlignment, textYAlignment, ceil, time, n2, n3, v52, v32, v33, localPlayer, v34, fn, v35, fn2, getthreadidentity, tbl, v36, fn3, fn4, fn5, fn6, tbl2, characterRemoving, tbl3, tbl4, findFirstChildOfClass, v37, v38, tbl5, v39, antiGuardKnockback, v40, flag, flyForCapture, flag2, setFilterEnabled, setStealMode, stealMode, str, flag3, v211, str2
+local it105, it110, it115
+local pc = 1
+
+while true do
+  if pc < 159 then
+    if pc < 80 then
+      if pc < 40 then
+        if pc < 20 then
+          if pc < 10 then
+            if pc == 1 then
+              v = Enum
+              st923.v2 = setidentity
+              v2 = workspace
+              st923.v4 = select
+              st923.v5 = controls
+              st923.v6 = getconnections
+              v3 = type
+              st923.v8 = getmetatable
+              v4 = CFrame
+              v5 = pairs
+              st923.v11 = RaycastParams
+              v6 = ipairs
+              v7 = pcall
+              st923.v14 = isfile
+              st923.v15 = TweenInfo
+              st923.v16 = buffer
+              st923.v17 = getcustomasset
+              st923.v18 = setclipboard
+              st923.v19 = settings
+              st923.v20 = Rect
+              v8 = firetouchinterest
+              st923.v22 = UserSettings
+              v9 = require
+              st923.v24 = applyAutoPlace
+              v10 = rawset
+              v11 = tonumber
+              v12 = warn
+              v13 = task
+              st923.v29 = getcallbackvalue
+              st923.v30 = Content
+              v14 = rawget
+              st923.v32 = http
+              v15 = bit32
+              st923.v34 = http_request
+              st923.v35 = set_thread_identity
+              v16 = math
+              st923.v37 = isfolder
+              st923.v38 = readfile
+              v17 = next
+              st923.v40 = request
+              v18 = game
+              v19 = string
+              st923.v43 = Instance
+              v20 = _G
+              st923.v45 = xpcall
+              v21 = syn
+              st923.v47 = loadstring
+              st923.v48 = error
+              st923.v49 = ColorSequence
+              v22 = UDim2
+              st923.v51 = ColorSequenceKeypoint
+              st923.v52 = UDim
+              st923.v53 = get_signal_cons
+              st923.v54 = queueonteleport
+              v23 = table
+              v24 = typeof
+              st923.v57 = makefolder
+              v25 = debug
+              v26 = os
+              st923.v60 = setthreadidentity
+              st923.v61 = queue_on_teleport
+              st923.v62 = getgc
+              v27 = Vector3
+              st923.v64 = delfile
+              v28 = writefile
+              st923.v66 = gethui
+              st923.v67 = fluxus
+              v29 = getgenv
+              st923.v69 = Color3
+              st923.v70 = fireproximityprompt
+              st923.v71 = Vector2
+              v30 = setmetatable
+              v31 = tostring
+              st923.v74 = setfpscap
+              clamp = v16
+
+              if not (clamp) then
+                pc = 3
+              else
+                pc = 2
+              end
+            elseif pc == 2 then
+              clamp = v16["clamp"]
+              pc = 3
+            elseif pc == 3 then
+              floor = v16
+
+              if not (floor) then
+                pc = 5
+              else
+                pc = 4
+              end
+            elseif pc == 4 then
+              floor = v16["floor"]
+              pc = 5
+            elseif pc == 5 then
+              random = v16
+
+              if not (random) then
+                pc = 7
+              else
+                pc = 6
+              end
+            elseif pc == 6 then
+              random = v16["random"]
+              pc = 7
+            elseif pc == 7 then
+              humanoidRigType = v
+
+              if not (humanoidRigType) then
+                pc = 9
+              else
+                pc = 8
+              end
+            elseif pc == 8 then
+              humanoidRigType = v["HumanoidRigType"]
+              pc = 9
+            elseif pc == 9 then
+              max = v16
+
+              if not (max) then
+                pc = 11
+              else
+                pc = 10
+              end
+            end
+          elseif pc == 10 then
+            max = v16["max"]
+            pc = 11
+          elseif pc == 11 then
+            new = v4
+
+            if not (new) then
+              pc = 13
+            else
+              pc = 12
+            end
+          elseif pc == 12 then
+            new = v4["new"]
+            pc = 13
+          elseif pc == 13 then
+            v43 = st923.v43
+
+            if not (v43) then
+              pc = 15
+            else
+              pc = 14
+            end
+          elseif pc == 14 then
+            v43 = st923.v43["new"]
+            pc = 15
+          elseif pc == 15 then
+            material = v
+
+            if not (material) then
+              pc = 17
+            else
+              pc = 16
+            end
+          elseif pc == 16 then
+            material = v["Material"]
+            pc = 17
+          elseif pc == 17 then
+            new2 = v27
+
+            if not (new2) then
+              pc = 19
+            else
+              pc = 18
+            end
+          elseif pc == 18 then
+            new2 = v27["new"]
+            pc = 19
+          elseif pc == 19 then
+            zero = v27
+
+            if not (zero) then
+              pc = 21
+            else
+              pc = 20
+            end
+          end
+        elseif pc < 30 then
+          if pc == 20 then
+            zero = v27["zero"]
+            pc = 21
+          elseif pc == 21 then
+            clear = v23
+
+            if not (clear) then
+              pc = 23
+            else
+              pc = 22
+            end
+          elseif pc == 22 then
+            clear = v23["clear"]
+            pc = 23
+          elseif pc == 23 then
+            st923.v91 = v25
+
+            if not (st923.v91) then
+              pc = 25
+            else
+              pc = 24
+            end
+          elseif pc == 24 then
+            st923.v91 = v25["getupvalue"]
+            pc = 25
+          elseif pc == 25 then
+            st923.v92 = v25
+
+            if not (st923.v92) then
+              pc = 27
+            else
+              pc = 26
+            end
+          elseif pc == 26 then
+            st923.v92 = v25["getinfo"]
+            pc = 27
+          elseif pc == 27 then
+            clock = v26
+
+            if not (clock) then
+              pc = 29
+            else
+              pc = 28
+            end
+          elseif pc == 28 then
+            clock = v26["clock"]
+            pc = 29
+          elseif pc == 29 then
+            spawn = v13
+
+            if not (spawn) then
+              pc = 31
+            else
+              pc = 30
+            end
+          end
+        elseif pc == 30 then
+          spawn = v13["spawn"]
+          pc = 31
+        elseif pc == 31 then
+          wait = v13
+
+          if not (wait) then
+            pc = 33
+          else
+            pc = 32
+          end
+        elseif pc == 32 then
+          wait = v13["wait"]
+          pc = 33
+        elseif pc == 33 then
+          abs = v16
+
+          if not (abs) then
+            pc = 35
+          else
+            pc = 34
+          end
+        elseif pc == 34 then
+          abs = v16["abs"]
+          pc = 35
+        elseif pc == 35 then
+          st923.v97 = v
+
+          if not (st923.v97) then
+            pc = 37
+          else
+            pc = 36
+          end
+        elseif pc == 36 then
+          st923.v97 = v["CoreGuiType"]
+          pc = 37
+        elseif pc == 37 then
+          humanoidStateType = v
+
+          if not (humanoidStateType) then
+            pc = 39
+          else
+            pc = 38
+          end
+        elseif pc == 38 then
+          humanoidStateType = v["HumanoidStateType"]
+          pc = 39
+        elseif pc == 39 then
+          lower = v19
+
+          if not (lower) then
+            pc = 41
+          else
+            pc = 40
+          end
+        end
+      elseif pc < 60 then
+        if pc < 50 then
+          if pc == 40 then
+            lower = v19["lower"]
+            pc = 41
+          elseif pc == 41 then
+            match = v19
+
+            if not (match) then
+              pc = 43
+            else
+              pc = 42
+            end
+          elseif pc == 42 then
+            match = v19["match"]
+            pc = 43
+          elseif pc == 43 then
+            insert = v23
+
+            if not (insert) then
+              pc = 45
+            else
+              pc = 44
+            end
+          elseif pc == 44 then
+            insert = v23["insert"]
+            pc = 45
+          elseif pc == 45 then
+            date = v26
+
+            if not (date) then
+              pc = 47
+            else
+              pc = 46
+            end
+          elseif pc == 46 then
+            date = v26["date"]
+            pc = 47
+          elseif pc == 47 then
+            remove = v23
+
+            if not (remove) then
+              pc = 49
+            else
+              pc = 48
+            end
+          elseif pc == 48 then
+            remove = v23["remove"]
